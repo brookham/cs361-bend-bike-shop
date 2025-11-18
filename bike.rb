@@ -7,12 +7,12 @@ class Bike
 
   attr_reader :id, :color, :price, :weight, :luggage
 
-  def initialize(id, color, price, extra_items)
-    @id = id
-    @color = color
-    @price = price
+  def initialize(args)
+    @id = args[:id]
+    @color = args[:color]
+    @price = args[:price]
     @weight = STANDARD_WEIGHT
-    @luggage = Luggage.new(Luggage::DEFAULT_MAX_CAPACITY, extra_items, self)
+    @luggage = args[:luggage]
   end
 
 end
